@@ -40,7 +40,7 @@ const arrProperties = ["id", "name", "spawn_time"];
 
 /* se declara arreglo con id de botones para filtrar, que son los mismos que tomaran el parámetro "condition" 
 en las funciones displayFilter(en main.js) y filterData(en data.js)*/
-const arrTypes = ["Fire", "Dragon", "Electric", "Fighting", "Bug", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Water"];
+const arrTypes = ["Fire", "Dragon", "Electric", "Fighting", "Bug", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Water", "2 km", "5 km", "10 km", "Not in Eggs"];
 
 /* función que permitirá llamar a los 2 arreglos anteriores para que cada elemento pase como un argumento de las funciones displaySorting y DisplayFilter*/
 function iterate(display, keyArray, objectArray){

@@ -2,15 +2,18 @@
 window.processData = {
 
   filterData: (data, condition) => {  
-    let storeTypes = [];
+    let filteredData = [];
     for (let i = 0; i < data.length; i++){
+      if(data[i].egg === condition) {
+        filteredData.push(data[i]);
+      }
       for (let j=0; j < data[i]["type"].length; j++){
         if (data[i].type[j] === condition){
-        storeTypes.push(data[i]);
+          filteredData.push(data[i]);
         }
       }   
     }
-    return storeTypes;
+    return filteredData;
   },
 
   percentageFilteredData: (filteredData, data) => {  

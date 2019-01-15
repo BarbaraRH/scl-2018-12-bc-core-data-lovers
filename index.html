@@ -29,13 +29,13 @@
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2>Tipos de Pokemon</h2>
+          <h2></h2>
         </div>
       </div>
 
       <div class="row">
-        <div class="col-8">
-          <p>Selecciona uno de los botones a continuación para filtrar pokemones por tipo.</p>
+        <div class="col-2">
+          <p>Filtrar por Tipo</p>
         </div>
       </div>
 
@@ -104,6 +104,29 @@
 
       <br>
 
+      <div class="row">
+        <div class="col-2">
+          <p>Filtrar por huevo</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 offset-lg-1 col-lg-2">
+          <button id="2 km" type="button" class="btn btn-outline-secondary"><strong>2 km</strong> </button>
+        </div>
+        <div class="col-3 col-lg-2">
+          <button id="5 km" type="button" class="btn btn-outline-secondary"><strong>5 km</strong> </button>
+        </div>
+        <div class="col-3 col-lg-2">
+          <button id="10 km" type="button" class="btn btn-outline-secondary"><strong>10 km</strong> </button>
+        </div>
+        <div class="col-3 col-lg-2">
+            <button id="Not in Eggs" type="button" class="btn btn-outline-secondary"><strong>Not in Eggs</strong> </button>
+        </div>
+      </div>
+
+      <br><br>
+
       <div id="percent" class="col">  </div>
 
       <br>
@@ -112,15 +135,13 @@
     <div class="table-responsive">
         <table class="table table-condensed table-bordered table-hover">
           <thead class="thead-light">
-            <tr>
-  
+            <tr>  
               <th scope="col"><input id="id" type="button" name="option" value="id ↑↓"></th>
               <th scope="col"><input id="name" type="button" name="option" value="nombre ↑↓"></th>
               <th scope="col">Imagen</th>
               <th scope="col">Tipo</th>
               <th scope="col">Debilidades</th>
-              <th scope="col"><input id="spawn_time" type="button" name="option" value="tiempo aparición ↑↓"></th>
-  
+              <th scope="col"><input id="spawn_time" type="button" name="option" value="tiempo aparición ↑↓"></th>  
             </tr>
           </thead>
           <tbody id="myTable">

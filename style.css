@@ -40,7 +40,22 @@ strong {
     .title{
         font-size: 30px;
     }
+    .large{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
 }
+
+.mobile{
+    display: none;
+}
+
+.large{
+    display: block;
+}
+
 
 .table {
     table-layout: auto;
