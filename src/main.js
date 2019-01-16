@@ -8,21 +8,20 @@ let table = document.getElementById("myTable");
 aquí se conecta su espacio con el html */
 
 function arrayToTable(arr, table){
-    table.innerHTML = "";
-    result = "";
-    for (let i = 0; i < arr.length; i++){
-        result = table.innerHTML +=
-        `<tr>
-            <td>${arr[i]["id"]}</td>
-            <td>${arr[i]["name"]}</td>
-            <td><img id="img" src="${arr[i]["img"]}"></td>
-            <td>${arr[i]["type"]}</td>
-            <td>${arr[i]["weaknesses"]}</td>
-            <td>${arr[i]["spawn_time"]}</td>
-        </tr>`
+        table.innerHTML = "";
+        for (let i = arr.length-1; i >= 0; i--){  
+            const row = table.insertRow(0);
+            row.innerHTML = 
+            `<tr>
+                <td>${arr[i]["id"]}<div><img class="mobile img" src="${arr[i]["img"]}"></div></td>
+                <td><strong>${arr[i]["name"]}</strong><br><br><div class="mobile">tipo:<br>${arr[i]["type"].join('<br>')}<br><br>debilidades:<br>${arr[i]["weaknesses"].join('<br>')}</div></td>
+                <td class="large"><img class="img" src="${arr[i]["img"]}"></td>
+                <td class="large">${arr[i]["type"]}</td>
+                <td class="large">${arr[i]["weaknesses"]}</td>
+                <td>${arr[i]["spawn_time"]}</td>
+            </tr>`
+        }
     }
-    return result;
-}
 
 /* se declara variable que guarda arreglo de objetos pokemon */
 let data = (window.POKEMON).pokemon;

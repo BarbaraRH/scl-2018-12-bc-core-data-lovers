@@ -9,7 +9,7 @@ header {
     padding: 3% 0;
 }
 
-#img {
+.img {
     height: 60px;
     width: auto;
 }
@@ -21,6 +21,15 @@ strong {
 .img_btn {
     height: 60px;
     width: 65px;
+}
+
+.mobile{
+    display: none;
+}
+
+.btn-egg{
+    height: 40px;
+        width: 75px;
 }
 
 @media (max-width: 425px){ 
@@ -45,16 +54,20 @@ strong {
     }
     .mobile{
         display: block;
+        /* border: black solid;
+        margin-right: 0px;
+        padding-right: 0px; */
     }
+    .laptop{
+        display: none;
+    }
+    /* #cell-id{
+        border: black solid;
+        width: 200px !important;
+    } */
 }
 
-.mobile{
-    display: none;
-}
 
-.large{
-    display: block;
-}
 
 
 .table {
