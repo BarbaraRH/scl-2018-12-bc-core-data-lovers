@@ -8,20 +8,20 @@ let table = document.getElementById("myTable");
 aquí se conecta su espacio con el html */
 
 function arrayToTable(arr, table){
-        table.innerHTML = "";
-        for (let i = arr.length-1; i >= 0; i--){  
-            const row = table.insertRow(0);
-            row.innerHTML = 
-            `<tr>
-                <td>${arr[i]["id"]}<div><img class="mobile img" src="${arr[i]["img"]}"></div></td>
-                <td><strong>${arr[i]["name"]}</strong><br><br><div class="mobile">tipo:<br>${arr[i]["type"].join('<br>')}<br><br>debilidades:<br>${arr[i]["weaknesses"].join('<br>')}</div></td>
-                <td class="large"><img class="img" src="${arr[i]["img"]}"></td>
-                <td class="large">${arr[i]["type"]}</td>
-                <td class="large">${arr[i]["weaknesses"]}</td>
-                <td>${arr[i]["spawn_time"]}</td>
-            </tr>`
-        }
+    table.innerHTML = "";
+    for (let i = arr.length-1; i >= 0; i--){  
+        const row = table.insertRow(0);
+        row.innerHTML = 
+        `<tr>
+            <td>${arr[i]["id"]}<div><img class="mobile img" src="${arr[i]["img"]}"></div></td>
+            <td><strong>${arr[i]["name"]}</strong><br><br><div class="mobile">tipo:<br>${arr[i]["type"].join('<br>')}<br><br>debilidades:<br>${arr[i]["weaknesses"].join('<br>')}</div></td>
+            <td class="large"><img class="img" src="${arr[i]["img"]}"></td>
+            <td class="large">${arr[i]["type"]}</td>
+            <td class="large"><div class="lt">${arr[i]["weaknesses"]}</div><div class="medium">${arr[i]["weaknesses"].join('<br>')}</div></td>
+            <td>${arr[i]["spawn_time"]}</td>
+        </tr>`
     }
+}
 
 /* se declara variable que guarda arreglo de objetos pokemon */
 let data = (window.POKEMON).pokemon;
@@ -80,7 +80,7 @@ function displaySorting(sortBy,objectArray){
 function displayFilter(condition,objectArray){
     const filteredData = window.processData.filterData(objectArray, condition); 
     const filterButton = document.getElementById(condition).style; 
-    let percent = document.getElementById("percent")
+    let percent = document.getElementById("percent");
     document.getElementById(condition).addEventListener("click", function(){ 
         if (filterButton.background === "white"){          
             refreshButtons(arrTypes); 
@@ -102,3 +102,42 @@ function displayFilter(condition,objectArray){
 
 iterate(displaySorting, arrProperties, data);
 iterate(displayFilter, arrTypes, data);  
+
+const strengths = {
+    "Normal":["None"], 
+    "Fighting":["Normal", "Rock", "Steel", "Ice", "Dark"],
+    "Flying":["Fighting", "Bug", "Grass"],
+    "Poison":["Grass", "Fairy"],
+    "Ground":["Poison", "Rock", "Steel", "Fire", "Electric"],
+    "Rock":["Flying", "Bug", "Fire", "Ice"],
+    "Bug":["Grass", "Psychic", "Dark"],
+    "Ghost":["Ghost", "Psychic"],
+    "Fire":["Bug", "Steel", "Grass", "Ice"],
+    "Water":["Ground", "Rock", "Fire"],
+    "Grass":["Ground", "Rock", "Water"],
+    "Electric":["Flying", "Water"],
+    "Psychic":["Fighting", "Poison"],
+    "Ice":["Flying", "Ground", "Grass", "Dragon"],
+    "Dragon":["Dragon"]
+}
+
+let arrPrueba = [{"type":["Ghost", "Grass"]}, {"type":["Ice", "Fire"]}, {"type":["Water", "Bug"]}]
+
+function addStrength(data, obj) {
+    let strengthAdded = data;
+    for (let i = 0; i< strengthAdded.length; i++) {
+        strengthAdded[i].strengths = [];  
+        for (let j = 0; j< strengthAdded[i]["type"].length; j++){
+            for(let strength in obj) {
+                if(strengthAdded[i].type[j] === strength){
+                    for(let k=0; k < obj[strength].length; k++){                        
+                        if((strengthAdded[i].strengths).includes(obj[strength][k]) == false){
+                            (strengthAdded[i].strengths).push(obj[strength][k]);
+                        }
+                    }                    
+                }
+            }
+        }        
+    }
+    return strengthAdded;
+}
