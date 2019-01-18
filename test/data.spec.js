@@ -51,5 +51,5 @@ describe('processData', () => {
   it('returns `20.00`', () => {
     window.assert.deepEqual(window.processData.percentageFilteredData([4,4], [2,3,3,4,7,5,2,4,1,5]), "20.00");
   });
-  
+     
 }); 
