@@ -33,10 +33,12 @@ strong {
 }
 
 .btn-group {
+    height: 75px;
     width: 75px;
     margin: 5px;
     border: solid 2px;
     border-radius: 5px;
+    align-content: center;
 }
 
 .mobile{
@@ -137,3 +139,9 @@ th, td {
 /* #percent{ 
     text-align: center;
 }  */
+   
+
+
+
+
+
