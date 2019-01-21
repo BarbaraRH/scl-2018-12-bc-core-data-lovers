@@ -7,10 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
 
 </head>  
 
 <body>
+
     <header>
       <div class="container">
         <div class="row">
@@ -77,7 +83,7 @@
         </div>
         <div>
           <button id="Ice" type="button" class="btn-group flex-wrap btn-outline-primary"> <img class="img_btn" src="css/Imagenes proyecto pokemon/ice.png">
-            <br> <strong>Ice</strong> </button>
+            <br> <strong id="ice-line">Ice</strong> </button>
         </div>
         <div>
           <button id="Normal" type="button" class="btn-group flex-wrap btn-outline-dark"><img class="img_btn" src="css/Imagenes proyecto pokemon/normal.png">
@@ -147,7 +153,7 @@
             <th><button id="name" class="btn btn-outline-primary" type="button"><strong>nombre<br>↑↓</strong></button></th>
             <th class="laptop" scope="col">imagen</th>
             <th class="laptop" scope="col">tipo</th>
-            <th class="laptop" scope="col"><strong>fuerte<br>contra</strong></th>
+            <th class="laptop" scope="col">fuerte<br>contra</th>
             <th class="laptop" scope="col">debilidades</th>
             <th><button id="spawn_time" class="btn btn-outline-primary" type="button"><strong>tiempo<br>aparición<br>↑↓</strong></button></th>            
           </tr>
